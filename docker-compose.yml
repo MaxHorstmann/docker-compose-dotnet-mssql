@@ -9,7 +9,7 @@ services:
      - SA_PASSWORD=Password!
   web:
     build: web
-    depends_on: sql
+    depends_on: [ sql ]
     ports:
      - "80:80"
 

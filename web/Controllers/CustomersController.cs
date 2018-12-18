@@ -8,6 +8,7 @@ using System.Data;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using test.Models;
+using test;
 
 namespace test.Controllers
 {
@@ -15,9 +16,7 @@ namespace test.Controllers
     {
         public IActionResult Index()
         {
-        	const string connectionString = "Data Source=sql;Initial Catalog=test;User Id=sa;Password=Password!";
-
-        	using (SqlConnection connection = new SqlConnection(connectionString))	
+        	using (SqlConnection connection = new SqlConnection(Config.ConnectionString))	
         	{
 	            var model = connection.Query<string>("SELECT name FROM Customers");
 	            return View(model);        	
