@@ -15,7 +15,7 @@ namespace test.Controllers
     {
         public IActionResult Index()
         {
-        	const string connectionString = "Data Source=(local);Initial Catalog=test;User Id=sa;Password=Password!";
+        	const string connectionString = "Data Source=sql;Initial Catalog=test;User Id=sa;Password=Password!";
 
         	using (SqlConnection connection = new SqlConnection(connectionString))	
         	{
