@@ -20,7 +20,8 @@ namespace test.Controllers
         	using (SqlConnection connection = new SqlConnection(connectionString))	
         	{
 	            var model = connection.Query<string>("SELECT name FROM Customers");
-	            return View(model);        	}
-	        }        
+	            return View(model);        	
+            }
+	    }   
     }
 }
