@@ -9,8 +9,8 @@ namespace test
 {
     public static class Config
     {
-        public const string ConnectionStringMasterDb = "Data Source=.;Initial Catalog=master;User Id=sa;Password=Password!";
-        public const string ConnectionString = "Data Source=.;Initial Catalog=test;User Id=sa;Password=Password!";
+        public const string ConnectionStringMasterDb = "Data Source=sql;Initial Catalog=master;User Id=sa;Password=Password!";
+        public const string ConnectionString = "Data Source=sql;Initial Catalog=test;User Id=sa;Password=Password!";
 
         public static void SetupSqlDb() // TODO use proper sql migration tool
         {
