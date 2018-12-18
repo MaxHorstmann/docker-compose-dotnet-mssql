@@ -1,7 +1,7 @@
 version: '3'
 services:
   sql:
-    image: "microsoft/mssql-server-linux:2017-latest"
+    build: sql 
     ports:
      - "1433:1433"
     environment:
