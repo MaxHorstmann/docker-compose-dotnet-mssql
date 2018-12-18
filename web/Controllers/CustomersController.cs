@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using test.Models;
 
@@ -12,10 +15,12 @@ namespace test.Controllers
     {
         public IActionResult Index()
         {
-        	const string sql = "SELECT name FROM Customers";
-        	
-            var model = new string[] { "John", "Peter", "Laura" };
-            return View(model);
-        }        
+        	const string connectionString = "Data Source=(local);Initial Catalog=test;User Id=sa;Password=Password!";
+
+        	using (SqlConnection connection = new SqlConnection(connectionString))	
+        	{
+	            var model = connection.Query<string>("SELECT name FROM Customers");
+	            return View(model);        	}
+	        }        
     }
 }
