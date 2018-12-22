@@ -10,7 +10,6 @@ services:
      - SA_PASSWORD=Password!
     restart: always
   web:
-    image: "maxhorstmann/web" 
     depends_on: [ sql ]
     ports:
      - "80:80"
