@@ -9,7 +9,6 @@ services:
      - MSSQL_PID=Express
      - SA_PASSWORD=Password!
   web:
-    build: web
     image: "maxhorstmann/web" 
     depends_on: [ sql ]
     ports:
