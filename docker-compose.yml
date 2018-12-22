@@ -8,9 +8,11 @@ services:
      - ACCEPT_EULA=Y
      - MSSQL_PID=Express
      - SA_PASSWORD=Password!
+    restart: always
   web:
     image: "maxhorstmann/web" 
     depends_on: [ sql ]
     ports:
      - "80:80"
+    restart: always
 
