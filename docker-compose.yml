@@ -8,10 +8,10 @@ services:
      - ACCEPT_EULA=Y
      - MSSQL_PID=Express
      - SA_PASSWORD=Password!
-    restart: always
+    #restart: always
   web:
     depends_on: [ sql ]
     ports:
      - "80:80"
-    restart: always
+    #restart: always
 

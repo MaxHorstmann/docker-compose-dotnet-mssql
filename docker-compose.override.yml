@@ -1,4 +1,10 @@
 version: '3'
 services:
   web:
-    build: web
+    container_name: local-dev
+    build: dev
+    stdin_open: true
+    tty: true
+    volumes: 
+      - .:/opt/code
+    working_dir: /opt/code
